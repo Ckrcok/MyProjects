@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  justify-self: center;
+}
+
+.gridContiner {
+  display: grid;
+  grid-template-areas:
+    "header header header button button button  "
+    "board board board board board board PlayerTurn"
+    "footer footer footer footer footer ";
+}
+/* Style the header */
+header {
+  grid-area: header;
+  background-color: #c89a9a;
+  /* padding: 30px; */
+  text-align: center;
+  font-size: 60px;
+  border: solid 1px;
+  color: red;
+  justify-self: left;
+}
+
+.board {
+  border: solid 1px red;
+  font-size: 25vh;
+  justify-self: center;
+  background-color: red;
+}
+
+.button {
+  grid-area: button;
+  color: #00c0ff;
+  border: solid;
+  border: solid 1px;
+  color: red;
+  align-items: right;
+  font-size: 20px;
+}
+
+/* Style the footer */
+footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px;
+  color: red;
+  justify-self: center;
+}
+
+.PlayerTurn {
+  grid-area: PlayerTurn;
+  font-size: 2vh;
+  justify-self: right;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-areas:
+      "header header header button button button  "
+      "board board board board board board PlayerTurn"
+      "footer footer footer footer footer ";
+  }
+}
