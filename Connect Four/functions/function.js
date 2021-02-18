@@ -8,7 +8,14 @@ const player2 = {
   color: yellow,
 };
 
-boardarray = [[1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6]];
+boardarray = [
+              [1,2,3,4,5,6,7],
+              [1,2,3,4,5,6,7],
+              [1,2,3,4,5,6,7],
+              [1,2,3,4,5,6,7],
+              [1,2,3,4,5,6,7],
+              [1,2,3,4,5,6,7]
+ ];
 
 /*----- app's state (variables) -----*/
 
@@ -26,15 +33,16 @@ const player2objt = document.getElementById("player2");
 
 /*----- event listeners -----*/
 
-eventlistner.mutebutton;
-eventlistner.resetbutton;
-eventlistner.exitbutton;
+eventlistner.muteButton;
+eventlistner.resetButton;
+eventlistner.exitButton;
 eventlistner.board;
 
 /*----- functions -----*/
 
 function that init(){
 set the board empty;
+reset the timer;
 
 }
 
@@ -65,5 +73,16 @@ function that detects if (theres four){
   }else if (player1 !=player1 || player2 != player2){
     pass turn to next player
   }
+
+}
+
+
+function render () {
+
+    redner player1
+    render player2
+    render the board
+    render the time
+    render the PlayerTurn
 
 }

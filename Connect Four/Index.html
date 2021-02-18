@@ -9,17 +9,30 @@
     <title>Connect Four</title>
   </head>
   <body>
-    <div class="gridContiner"><header>Connect Four</header></div>
+    <div class="gridContiner">
+      <header class="header">
+        Connect Four
+      </header>
+      <div id = buttons>
+      <button  class="buttonReset" type="button" name="button">Reset</button>
 
-    <button class="button" type="button" name="button">Reset</button>
+      <button  class="buttonMute" type="button" name="muteButton">Mute</button>
 
-    <button class="button" type="button" name="muteButton">Mute</button>
+      <button  class="buttonExit" type="button" name="button">Exit</button>
+      </div>
+      <div class="center">
 
-    <button class="button" type="button" name="button">Exit</button>
+           <div id = "board" class="Board">
+             <tr><td>x</td><td>o</td><td>o</td><td></td><td></td><td></td><td></td></tr>
+             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+           </div>
+           <div id = "PlayerTurn" class="PlayerTurn"> draw player turn here draw board here </div>
+    </div>
 
-    <div class="PlayerTurn">draw player turn here</div>
-
-    <div class="board">draw board here</div>
   </body>
 
   <footer>i made the game</footer>
