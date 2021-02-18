@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body{
+  background-image: linear-gradient(#007cc7, navy);
+  background-size: auto;
+  background-repeat:no-repeat ;
+  margin: 0;
+  height: 100%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  color: azure;
+}
+
+h1 {
+  padding: 15px;
+}
+
+#scoreboard {
+  margin: 3% auto 1% auto;
+}
+
+#Score1,#Score2{
+  padding: 10px;
+  width: 37.5%;
+}
+
+.playerClassOn {
+  border: solid darkgoldenrod 6px;
+  border-radius: 10px;
+}
+
+#game {
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 475px;
+  height: 475px;
+  background-color: #136cc5;
+}
+
+#game td {
+  border: solid darkgoldenrod 5px;
+  border-radius: 10px;
+  font-size: 40px;
+  width: 33.33%;
+  height: 33.33%;
+}
+
+#game td:hover {
+  color: gold;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+button {
+  border: solid darkgoldenrod 5px;
+  border-radius: 10px;
+  font-size: 55%;
+  width: 200px;
+  height: 60px;
+  background: navy;
+  color: white;
+  margin: 5%;
+  font-family: "Press Start 2P", cursive;
+}
+button:hover {
+  color: gold;
+  font-size: 70%;
+  cursor: pointer;
+}
+
+footer {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5%;
+}
