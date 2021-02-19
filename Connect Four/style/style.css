@@ -1,9 +1,21 @@
 html {
-  background-image: url("assets/background.png");
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  height: 100%;
+  /* max-height: 600px; */
+  width: 1000px;
+  margin: auto;
+  background-image: url("assets/stars.png"), url("assets/spaceMan.png"),
+    url("/"), url("assets/background.png"), linear-gradient(blue, black);
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat;
+  background-position: 0 0px, 0 0%, 500px, 0, 0;
+  background-size: 1500px, 1000px, 300px 300px, 100% 100%, 100% 100%;
+  animation: 100s para infinite ease;
 }
 
+@keyframes para {
+  100% {
+    background-position: -5000px 30%, 1000px 95%, 0px 0%, 0px 0%, 400px 0;
+  }
+}
 .grid-container {
   display: grid;
   grid-template-columns: 0.1fr 4.6fr 0.4fr 0.8fr;
@@ -46,17 +58,16 @@ html {
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    ". . ."
-    ". . .";
+  grid-template-areas: ". . .";
   grid-area: buttons;
 }
 .timer {
   grid-area: timer;
 }
 .footer {
+  margin-top: 5%;
   grid-area: footer;
   text-align: center;
 }
@@ -71,10 +82,25 @@ html {
   grid-area: gameboard;
   background-image: url("assets/Board.png");
   background-size: 100% 100%;
+  cursor: pointer;
 }
-.insideboard {
+.insideBoard {
   text-align: center;
   color: green;
   grid-area: insideboard;
   padding-bottom: 50px;
+  font-size: 50px;
+}
+
+.buttonExit {
+  cursor: pointer;
+  height: 50%;
+}
+.buttonReset {
+  cursor: pointer;
+  height: 50%;
+}
+.buttonMute {
+  cursor: pointer;
+  height: 50%;
 }
