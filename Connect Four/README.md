@@ -1,6 +1,8 @@
 # 🌌Connect - Four In Space!󠀠🌌
-
+<p align="center">
 [![](https://i.kym-cdn.com/photos/images/newsfeed/001/061/696/e22.jpg)](#)
+</p>
+
 
 ##
 
