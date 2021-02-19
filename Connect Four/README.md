@@ -32,7 +32,8 @@ Project Goals near future -
 
 - Basic HTML bones (Done)
 - Finish css look an feels (Working..)
-- Javascript (Waiting)
+- Basic JavaScript Functions (Waiting)
+- Finishing  Javascript (Waiting)
 - More Style (Waiting)
 
 Project Goals Future - 
