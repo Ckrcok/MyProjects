@@ -41,5 +41,5 @@ Project Goals Future -
 ##
 
 # WireFrame -
+[![](https://raw.githubusercontent.com/Ckrcok/MyProjects/main/Connect%20Four/FrameWire.PNG)](#)
 
-(WireFrame.png)
