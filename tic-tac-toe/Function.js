@@ -36,6 +36,7 @@ const winningCombos = [
 const playSound = new Audio(
   "https://www.myinstants.com/media/sounds/discord-notification.mp3"
 );
+
 const resetSound = new Audio(
   "https://www.myinstants.com/media/sounds/discord-leave.mp3"
 );
