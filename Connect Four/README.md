@@ -26,7 +26,7 @@ Project Languages -
 
 Project Goals near future - 
 
--basic HTML bones (Done)
+- Basic HTML bones (Done)
 - Finish css look an feels (Working..)
 - Javascript (Waiting)
 - More Style (Waiting)
