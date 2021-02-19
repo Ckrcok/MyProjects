@@ -1,3 +1,9 @@
+html {
+  background-image: url("assets/background.png");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 0.1fr 4.6fr 0.4fr 0.8fr;
@@ -21,13 +27,21 @@
 }
 .player-turn {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 0.4fr 2.3fr 0.3fr;
+  grid-template-rows: 1.5fr 0.8fr 0.8fr;
   gap: 0px 0px;
   grid-template-areas:
     ". . ."
+    ". turn-text ."
     ". . .";
   grid-area: player-turn;
+
+  text-align: center;
+}
+
+.turn-text {
+  grid-area: turn-text;
+  text-align: center;
 }
 .buttons {
   display: grid;
@@ -44,6 +58,7 @@
 }
 .footer {
   grid-area: footer;
+  text-align: center;
 }
 .gameboard {
   display: grid;

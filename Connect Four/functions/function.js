@@ -30,7 +30,7 @@ const bkacgroundSound = new Audio("background.mp3");
 const board = document.querySelectorAll(boardarry);
 const player1obj = document.getElementById("player1");
 const player2objt = document.getElementById("player2");
-
+const obj1 = new image("assets/Player1.png")
 /*----- event listeners -----*/
 
 eventlistner.muteButton;
@@ -39,7 +39,6 @@ eventlistner.exitButton;
 eventlistner.board;
 
 /*----- functions -----*/
-
 function that init(){
 set the board empty;
 reset the timer;
