@@ -74,6 +74,7 @@ html {
 }
 .insideboard {
   text-align: center;
+  color: green;
   grid-area: insideboard;
   padding-bottom: 50px;
 }
