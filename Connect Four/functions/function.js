@@ -6,6 +6,7 @@ timer = 60;
 
 /*----- constants -----*/
 const player1 = document.createElement("img");
+player1.classList.add("img");
 player1.src = "/style/assets/Player1.png";
 
 const player2 = " ";
@@ -39,16 +40,13 @@ board.addEventListener("click", click);
 buttonExit.addEventListener("click", exit);
 buttonReset.addEventListener("click", reset);
 buttonMute.addEventListener("click", mute);
-
 /*----- functions -----*/
 
 function click(e) {
   console.log("Clicked the " + event.target.id);
   innerHTML = "<img src='/style/assets/Player1.png'>";
-  // requgnize wich id was clicked
-  // then replace it with a img
-
-  document.target.innerHTML = "<img src='/style/assets/Player1.png'>";
+  document.getElementById(event.target.id).innerHTML =
+    "<img class='img' src='/style/assets/Player1.png'>";
 }
 
 function exit(e) {
