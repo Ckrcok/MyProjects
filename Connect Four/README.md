@@ -3,7 +3,14 @@
 
 
 
+
+
+
 [![](https://i.kym-cdn.com/photos/images/newsfeed/001/061/696/e22.jpg)](#)
+
+
+
+
 
 
 
@@ -31,10 +38,12 @@ Project Languages -
 Project Goals near future - 
 
 - Basic HTML bones (Done)
-- Finish css look an feels (Working..)
+- Finish css look an feels (...Working...)
 - Basic JavaScript Functions (Waiting)
 - Finishing  Javascript (Waiting)
 - More Style (Waiting)
+
+##
 
 Project Goals Future - 
 
