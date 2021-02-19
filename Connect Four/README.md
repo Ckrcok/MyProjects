@@ -5,7 +5,7 @@ Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, F
 The pieces fall straight down, occupying the lowest available space within the column.
 The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. Connect Four is a solved game.
 
-#Connect - Four In Space!
+# Connect - Four In Space!
 
 this is my first project working on connect for with mostly DOM monopolization
 
