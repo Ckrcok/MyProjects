@@ -79,7 +79,6 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -110,6 +109,7 @@ blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -117,47 +117,47 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* reset done */
 
 body {
   display: flex;
   flex-direction: column;
   justify-self: center;
   background-color: #13a2d1;
+  position: relative;
+  padding: 10vh;
 }
 
-.gridContiner {
-  display: block;
-}
 /* Style the header */
-.header {
-  display: flex;
-  flex-direction: row;
-  background-color: #c89a9a;
-  padding: 10px;
-  font-size: 60px;
-  border: solid 1px;
-  color: red;
-}
 
 #buttons {
   display: flex;
   color: #00c0ff;
   flex-flow: row;
   justify-content: right;
-  font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
 }
 
 #board {
   border: solid 1px red;
-  font-size: 50vh;
-  background-color: red;
+  font-size: 10vh;
+  width: 475px;
+  height: 475px;
   margin: auto;
+  background-color: #136cc5;
+}
+
+.board > td {
+  border: solid darkgoldenrod 5px;
+  border-radius: 10px;
+  font-size: 40px;
+  width: 33.33%;
+  height: 33.33%;
 }
 
 /* Style the footer */
@@ -174,11 +174,39 @@ footer {
 #PlayerTurn {
   align-self: center;
   margin: auto;
+  border: solid 1px red;
 }
 
 .center {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10vh;
+}
+
+.buttonReset {
+  cursor: pointer;
+  font-size: 20px;
+}
+.buttonExit {
+  cursor: pointer;
+  font-size: 20px;
+}
+.buttonMute {
+  cursor: pointer;
+  font-size: 20px;
+}
+.gridContiner {
+  display: block;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c89a9a;
+  padding: 10px;
+  font-size: 60px;
+  border: solid 1px;
+  color: red;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

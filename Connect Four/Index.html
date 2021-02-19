@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="functions/function.js" type="text/javascript"></script>
+    <script defer src="functions/function.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style/style.css" />
     <title>Connect Four</title>
   </head>
@@ -13,27 +13,77 @@
       <header class="header">
         Connect Four
       </header>
-      <div id = buttons>
-      <button  class="buttonReset" type="button" name="button">Reset</button>
+      <div id="buttons">
+        <button class="buttonReset" type="button" name="button">Reset</button>
 
-      <button  class="buttonMute" type="button" name="muteButton">Mute</button>
+        <button class="buttonMute" type="button" name="muteButton">Mute</button>
 
-      <button  class="buttonExit" type="button" name="button">Exit</button>
+        <button class="buttonExit" type="button" name="button">Exit</button>
       </div>
       <div class="center">
+        <div id="board" class="Board">
+          <tr>
+            <td>_</td>
+            <td>_</td>
+            <td>_</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>s</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </div>
 
-           <div id = "board" class="Board">
-             <tr><td>x</td><td>o</td><td>o</td><td></td><td></td><td></td><td></td></tr>
-             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-           </div>
-           <div id = "PlayerTurn" class="PlayerTurn"> draw player turn here draw board here </div>
+        <div id="PlayerTurn" class="PlayerTurn">
+          draw player turn here draw board here
+        </div>
+      </div>
+
+      <footer>i made the game</footer>
     </div>
-
   </body>
-
-  <footer>i made the game</footer>
 </html>
