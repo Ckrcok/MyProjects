@@ -1,220 +1,64 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.1fr 4.6fr 0.4fr 0.8fr;
+  grid-template-rows: 0.5fr 0.6fr 3.4fr 0.2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "connect-four connect-four connect-four ."
+    "timer timer . buttons"
+    ". gameboard gameboard player-turn"
+    "footer footer footer footer";
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+.connect-four {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . .";
+  grid-area: connect-four;
 }
-body {
-  line-height: 1;
+.player-turn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . .";
+  grid-area: player-turn;
 }
-ol,
-ul {
-  list-style: none;
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . .";
+  grid-area: buttons;
 }
-blockquote,
-q {
-  quotes: none;
+.timer {
+  grid-area: timer;
 }
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* reset done */
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  background-color: #13a2d1;
-  position: relative;
-  padding: 10vh;
-}
-
-/* Style the header */
-
-#buttons {
-  display: flex;
-  color: #00c0ff;
-  flex-flow: row;
-  justify-content: right;
-  margin: 4px 2px;
-}
-
-#board {
-  border: solid 1px red;
-  font-size: 10vh;
-  width: 475px;
-  height: 475px;
-  margin: auto;
-  background-color: #136cc5;
-}
-
-.board > td {
-  border: solid darkgoldenrod 5px;
-  border-radius: 10px;
-  font-size: 40px;
-  width: 33.33%;
-  height: 33.33%;
-}
-
-/* Style the footer */
-footer {
+.footer {
   grid-area: footer;
-  background-color: #f1f1f1;
-  padding: 10px;
+}
+.gameboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "insideboard insideboard insideboard"
+    "insideboard insideboard insideboard";
+  grid-area: gameboard;
+  background-image: url("assets/Board.png");
+  background-size: 100% 100%;
+}
+.insideboard {
   text-align: center;
-  border: solid 1px;
-  color: red;
-  justify-self: center;
-}
-
-#PlayerTurn {
-  align-self: center;
-  margin: auto;
-  border: solid 1px red;
-}
-
-.center {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10vh;
-}
-
-.buttonReset {
-  cursor: pointer;
-  font-size: 20px;
-}
-.buttonExit {
-  cursor: pointer;
-  font-size: 20px;
-}
-.buttonMute {
-  cursor: pointer;
-  font-size: 20px;
-}
-.gridContiner {
-  display: block;
-}
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #c89a9a;
-  padding: 10px;
-  font-size: 60px;
-  border: solid 1px;
-  color: red;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-areas:
-      "header header header button button button  "
-      "board board board board board board PlayerTurn"
-      "footer footer footer footer footer ";
-  }
+  grid-area: insideboard;
+  padding-bottom: 50px;
 }
