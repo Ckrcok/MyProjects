@@ -1,7 +1,7 @@
 html {
   height: 100%;
   /* max-height: 600px; */
-  width: 1000px;
+  width: 1000vw;
   margin: auto;
   background-image: url("assets/stars.png"), url("assets/spaceMan.png"),
     url("/"), url("assets/background.png"), linear-gradient(blue, black);
@@ -10,14 +10,83 @@ html {
   background-size: 1500px, 1000px, 300px 300px, 100% 100%, 100% 100%;
   animation: 100s para infinite ease;
 }
-
 @keyframes para {
   100% {
     background-position: -5000px 30%, 1000px 95%, 0px 0%, 0px 0%, 400px 0;
   }
 }
+
+.img{
+display: flex;
+justify-content: center;
+width: 10%;
+height:10%;
+
+}
+
+/*
 .grid-container {
-  /* display: grid;
+  display: grid;
+  grid-template-columns:  1fr 300px 300px 300px 300px 300px 300px 300px;
+  grid-template-rows:  10% 10% 300px 300px 300px 300px 300px 300px;
+  gap: 0px 0px;
+}
+.connect-four { grid-area: 1 / 1 / 2 / 9; }
+.buttons { grid-area: 2 / 6 / 3 / 9; }
+.timer { grid-area: 2 / 1 / 3 / 6; }
+.player-turn { grid-area: 3 / 8 / 9 / 9; }
+.table { grid-area: 3 / 1 / 9 / 8; }
+.td1 { grid-area: 3 / 1 / 4 / 2; }
+.td2 { grid-area: 3 / 2 / 4 / 3; }
+.td3 { grid-area: 3 / 3 / 4 / 4; }
+.td4 { grid-area: 3 / 4 / 4 / 5; }
+.td5 { grid-area: 3 / 5 / 4 / 6; }
+.td6 { grid-area: 3 / 6 / 4 / 7; }
+.td7 { grid-area: 3 / 7 / 4 / 8; }
+.td8 { grid-area: 4 / 1 / 5 / 2; }
+.td9 { grid-area: 4 / 2 / 5 / 3; }
+.td10 { grid-area: 4 / 3 / 5 / 4; }
+.td11 { grid-area: 4 / 4 / 5 / 5; }
+.td12 { grid-area: 4 / 5 / 5 / 6; }
+.td13 { grid-area: 4 / 6 / 5 / 7; }
+.td14 { grid-area: 4 / 7 / 5 / 8; }
+.td15 { grid-area: 5 / 1 / 6 / 2; }
+.td16 { grid-area: 5 / 2 / 6 / 3; }
+.td17 { grid-area: 5 / 3 / 6 / 4; }
+.td18 { grid-area: 5 / 4 / 6 / 5; }
+.td19 { grid-area: 5 / 5 / 6 / 6; }
+.td20 { grid-area: 5 / 6 / 6 / 7; }
+.td21 { grid-area: 5 / 7 / 6 / 8; }
+.td22 { grid-area: 6 / 1 / 7 / 2; }
+.td23 { grid-area: 6 / 2 / 7 / 3; }
+.td24 { grid-area: 6 / 3 / 7 / 4; }
+.td25 { grid-area: 6 / 4 / 7 / 5; }
+.td26 { grid-area: 6 / 5 / 7 / 6; }
+.td27 { grid-area: 6 / 6 / 7 / 7; }
+.td28 { grid-area: 6 / 7 / 7 / 8; }
+.td29 { grid-area: 7 / 1 / 8 / 2; }
+.td30 { grid-area: 7 / 2 / 8 / 3; }
+.td31 { grid-area: 7 / 3 / 8 / 4; }
+.td32 { grid-area: 7 / 4 / 8 / 5; }
+.td33 { grid-area: 7 / 5 / 8 / 6; }
+.td34 { grid-area: 7 / 6 / 8 / 7; }
+.td35 { grid-area: 7 / 7 / 8 / 8; }
+.td36 { grid-area: 8 / 1 / 9 / 2; }
+.td37 { grid-area: 8 / 2 / 9 / 3; }
+.td38 { grid-area: 8 / 3 / 9 / 4; }
+.td39 { grid-area: 8 / 4 / 9 / 5; }
+.td40 { grid-area: 8 / 5 / 9 / 6; }
+.td41 { grid-area: 8 / 6 / 9 / 7; }
+.td42 { grid-area: 8 / 7 / 9 / 8; }
+
+
+
+
+
+/*
+.grid-container {
+  display: grid;
+  display: grid;
   grid-template-columns: 0.1fr 4.6fr 0.4fr 0.8fr;
   grid-template-rows: 0.5fr 0.6fr 3.4fr 0.2fr;
   gap: 0px 0px;
@@ -25,20 +94,22 @@ html {
     "connect-four connect-four connect-four ."
     "timer timer . buttons"
     ". gameboard gameboard player-turn"
-    "footer footer footer footer"; */
-}
+    "footer footer footer footer";
+ }
 .connect-four {
-  /* display: grid;
+
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     ". . ."
     ". . .";
-  grid-area: connect-four; */
+  grid-area: connect-four;
+  grid-area: connect-four;
 }
 .player-turn {
-  /* display: grid;
+display: grid;
   grid-template-columns: 0.4fr 2.3fr 0.3fr;
   grid-template-rows: 1.5fr 0.8fr 0.8fr;
   gap: 0px 0px;
@@ -46,70 +117,78 @@ html {
     ". . ."
     ". turn-text ."
     ". . .";
-  grid-area: player-turn; */
+  grid-area: player-turn;
+  grid-area: player-turn;
 
   text-align: center;
 }
-
-.turn-text {
-  grid-area: turn-text;
+@@ -56,12 +56,12 @@ html {
   text-align: center;
 }
 .buttons {
-  /* display: grid;
+  display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: ". . .";
-  grid-area: buttons; */
+  grid-area: buttons;
+  grid-area: buttons;
+
 }
 .timer {
   grid-area: timer;
-}
-.footer {
-  margin-top: 5%;
-  grid-area: footer;
+@@ -72,15 +72,15 @@ html {
   text-align: center;
 }
 .gameboard {
-  /* display: grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "insideboard insideboard insideboard"
     "insideboard insideboard insideboard";
-  grid-area: gameboard; */
+  grid-area: gameboard;
+  background-image: url("assets/Board.png");
+  grid-area: gameboard;
 
   background-size: 100% 100%;
   cursor: pointer;
 }
-.insideBoard {
-  text-align: center;
-  color: green;
+
+#insideBoard{
+  display: grid;
   grid-area: insideboard;
-  padding-bottom: 50px;
+}
+
+
+
+@@ -92,10 +92,15 @@ html {
   font-size: 50px;
   padding-top: 9px;
   padding-bottom: 47px;
+  padding-left: 5px;
+  padding-right: 5px;
 
   background-image: url("assets/Board.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+.img {
+  width: 0px;
+} */
 
 /* 114 x 75 */
-
+/*
 .buttonExit {
   cursor: pointer;
   height: 50%;
-}
-.buttonReset {
-  cursor: pointer;
-  height: 50%;
-}
-.buttonMute {
+@@ -108,3 +113,13 @@ html {
   cursor: pointer;
   height: 50%;
 }
@@ -119,7 +198,4 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.img {
-  width: 75px;
 }
