@@ -1,8 +1,8 @@
-html {
+/* html {
   height: 100%;
-  /* max-height: 600px; */
+   max-height: 600px;
   width: 1000vw;
-  margin: auto;
+  margin: 0;
   background-image: url("assets/stars.png"), url("assets/spaceMan.png"),
     url("/"), url("assets/background.png"), linear-gradient(blue, black);
   background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat;
@@ -14,14 +14,25 @@ html {
   100% {
     background-position: -5000px 30%, 1000px 95%, 0px 0%, 0px 0%, 400px 0;
   }
+} */
+
+table{
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+/* tr {
+  width: 50%;
+} */
+
+td{
+  width: 50px;
+  height: 50px;
 }
 
 .img{
-display: flex;
-justify-content: center;
-width: 10%;
-height:10%;
-
+width: 45px;
+height: 45px;
 }
 
 /*

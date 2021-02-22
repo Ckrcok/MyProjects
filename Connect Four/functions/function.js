@@ -22,6 +22,7 @@ boardarray = [
   [1, 2, 3, 4, 5, 6, 7],
   [1, 2, 3, 4, 5, 6, 7],
 ];
+boardarray.foreach;
 
 /*----- cached element references -----*/
 
@@ -59,4 +60,10 @@ function mute(e) {
 
 function reset(e) {
   console.log("Reset");
+}
+
+let td = document.getElementsByTagName("td");
+
+for (i = 0; i < td.length; i++) {
+  td[i].setAttribute("id", i);
 }
