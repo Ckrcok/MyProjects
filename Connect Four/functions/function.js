@@ -29,7 +29,7 @@ let boardarray = [
 /*----- cached element references -----*/
 // const obj1 = new image("assets/Player1.png");
 // const playSound = new Audio("PlacementAudio.mp3");
-// const bkacgroundSound = new Audio("background.mp3");
+const backgroundMusic = new Audio("assets/trippingInJapan.mp3");
 
 let obj1 = new Image("/assets/Player1.png");
 const board = document.getElementById("insideBoard");
@@ -119,6 +119,9 @@ for (let i = 0; i < td.length; i++) {
 //   });
 //   DOMboard.appendChild(row);
 // });
+function init() {
+  backgroundMusic.play();
+}
 
 function render(e) {
   // setTimeout(render, 1000);
@@ -137,5 +140,5 @@ function render(e) {
       "<img class='img' src='/style/assets/Player2.png'>";
   }
 }
-
+init();
 render();
