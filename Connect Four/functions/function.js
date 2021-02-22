@@ -44,7 +44,6 @@ let td = document.querySelectorAll("td");
 /*----- event listeners -----*/
 
 board.addEventListener("click", click);
-// board.addEventListener("click", render);
 buttonExit.addEventListener("click", exit);
 buttonReset.addEventListener("click", reset);
 buttonMute.addEventListener("click", mute);
@@ -52,7 +51,6 @@ buttonMute.addEventListener("click", mute);
 /*----- functions -----*/
 
 function click(e) {
-  console.log(e.target.tagName);
   if (
     e.target.tagName === "TABLE" ||
     e.target.tagName === "TBODY" ||
@@ -70,6 +68,7 @@ function click(e) {
     playerTurn = -1;
   } else if (playerTurn == -1) {
     render(e);
+
     boardarray[x][y] = playerTurn;
     playerTurn = 1;
   }
@@ -124,20 +123,18 @@ for (let i = 0; i < td.length; i++) {
 function render(e) {
   // setTimeout(render, 1000);
   if (e.target.tagName === "table") return;
-  if (playerTurn == 1) {
+  if (playerTurn == 1 && event.target.children.length === 0) {
     console.log(
       "Drawing what Player " + playerTurn + " draw at " + event.target.id
     );
     document.getElementById(event.target.id).innerHTML =
       "<img class='img' src='/style/assets/Player1.png'>";
-  } else if (playerTurn == -1) {
+  } else if (playerTurn == -1 && event.target.children.length === 0) {
     console.log(
       "Drawing what Player  " + playerTurn + " draw at " + event.target.id
     );
     document.getElementById(event.target.id).innerHTML =
       "<img class='img' src='/style/assets/Player2.png'>";
-  } else {
-    return;
   }
 }
 
