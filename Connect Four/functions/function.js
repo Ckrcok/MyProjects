@@ -29,7 +29,8 @@ let boardarray = [
 /*----- cached element references -----*/
 // const obj1 = new image("assets/Player1.png");
 // const playSound = new Audio("PlacementAudio.mp3");
-const backgroundMusic = new Audio("style/assets/Dads-in-Space.mp3");
+const backgroundMusic = document.getElementById("backgroundMusic");
+backgroundMusic.volume = 0.001;
 let obj1 = new Image("/assets/Player1.png");
 const board = document.getElementById("insideBoard");
 
@@ -46,11 +47,6 @@ board.addEventListener("click", click);
 buttonExit.addEventListener("click", exit);
 buttonReset.addEventListener("click", reset);
 buttonMute.addEventListener("click", mute);
-backgroundMusic.addEventListener("DOMContentLoaded", (event) => {
-  const audio = document.querySelector("audio");
-  audio.volume = 0.2;
-  audio.play();
-});
 
 /*----- functions -----*/
 

@@ -1,6 +1,5 @@
 # 🌌Connect - Four In Space!󠀠🌌
 
-
 <p align="center">
   <a href="https://i.kym-cdn.com/photos/images/newsfeed/001/061/696/e22.jpg">
     <img
@@ -34,9 +33,9 @@ Project Languages -
 Project Goals near future -
 
 - Basic HTML bones (Done)
-- Finish css look an feels (...Working...)
-- Basic JavaScript Functions (Waiting)
-- Finishing Javascript (Waiting)
+- Finish CSS look an feels (Done)
+- Basic JavaScript Functions (...Working...)
+- Finishing JavaScript (Waiting)
 - More Style (Waiting)
 
 ##
@@ -44,11 +43,11 @@ Project Goals near future -
 Project Goals Future -
 
 - Make it Online
-- Better css
+- Better CSS
 - Better JS
 
 ##
 
 # WireFrame -
-[![](https://raw.githubusercontent.com/Ckrcok/MyProjects/main/Connect%20Four/FrameWire.PNG)](#)
 
+[![](https://raw.githubusercontent.com/Ckrcok/MyProjects/main/Connect%20Four/FrameWire.PNG)](#)

@@ -9,13 +9,9 @@
     <title class="Connect-Four">Connect Four</title>
   </head>
   <body>
-    <!-- <audio controls>
-      <source src="style/assets/Dads-in-Space.mp3" />
-    </audio> -->
-
     <div class="grid-container">
       <div class="connect-four"><h1>Connect Four</h1></div>
-      <div class="player-turn">draw player turn</div>
+
       <div class="buttons">
         <button
           id="buttonReset"
@@ -96,8 +92,17 @@
           <td>42</td>
         </tr>
       </table>
-    </div>
+      <div class="player-turn">draw player turn</div>
 
+      <div id="backgroundMusic">
+        <audio id="backgroundMusic" autoplay controls>
+          <div class="MusicImage">
+            <img src="style\assets\MusicImage.jpg" />
+          </div>
+          <source src="style\assets\trippingInJapan.ogg" />
+        </audio>
+      </div>
+    </div>
     <div class="footer"><footer>i made the game</footer></div>
   </body>
 </html>
