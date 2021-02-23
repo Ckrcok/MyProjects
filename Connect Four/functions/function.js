@@ -30,7 +30,7 @@ let boardarray = [
 // const obj1 = new image("assets/Player1.png");
 // const playSound = new Audio("PlacementAudio.mp3");
 const backgroundMusic = document.getElementById("backgroundMusic");
-backgroundMusic.volume = 0.001;
+backgroundMusic.volume = 0.009;
 let obj1 = new Image("/assets/Player1.png");
 const board = document.getElementById("insideBoard");
 
