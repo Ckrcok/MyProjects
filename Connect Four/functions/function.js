@@ -38,12 +38,29 @@ let PlayerTurn = document.getElementById("player-turn");
 /*----- event listeners -----*/
 
 board.addEventListener("click", click);
-// board.addEventListener("click", changeColor);
+board.addEventListener("click", isFour);
 buttonExit.addEventListener("click", exit);
-buttonReset.addEventListener("click", reset);
+buttonReset.addEventListener("click", init);
 buttonMute.addEventListener("click", mute);
 
 /*----- functions -----*/
+function init() {
+  boardarray = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+  ];
+
+  for (let i = 0; i < td.length; i++) {
+    let col = i % 7;
+    let row = Math.floor(i / 7);
+    td[i].id = row + "" + col;
+    td[i].innerHTML = "";
+  }
+}
 
 function click(e) {
   if (
@@ -79,10 +96,6 @@ function mute(e) {
   console.log("Mute");
 }
 
-function reset(e) {
-  console.log("Reset");
-}
-
 for (let i = 0; i < td.length; i++) {
   let col = i % 7;
   let row = Math.floor(i / 7);
@@ -91,24 +104,45 @@ for (let i = 0; i < td.length; i++) {
 }
 
 // Check if four element of the same player is next to eachother then a win condition will pop
+function chkLine(a, b, c, d) {
+  // Check first cell non-zero and all cells match
 
+  console.log("done" + c);
+
+  return a != 0 && a == b && a == c && a == d;
+}
 // check is there four
 function isFour(e) {
-  //loops in the arry to check if there is four
-  score1 = 0;
-  for (let i = 0; i < boardarray.length; i++) {
-    for (let j = 0; j < boardarray[i].length; j++) {
-      if (boardarray[i][j] == 1) {
-        console.log("Player1 " + "populated" + " at " + i + "" + j);
-        console.log(score1);
-        score1++;
-      } else if (boardarray[i][j] == -1) {
-        console.log("Player2 " + "populated" + " at " + i + "" + j);
-      }
+  // Check right
+  for (r = 0; r < 7; r++) {
+    for (c = 0; c < 8; c++) {
+      if (
+        chkLine(
+          boardarray[r][c],
+          boardarray[r][c + 1],
+          boardarray[r][c + 2],
+          boardarray[r][c + 3]
+        )
+      )
+        return boardarray[r][c];
     }
   }
 
-  player1score = score1;
+  // //loops in the arry to check if there is four
+  // score1 = 0;
+  // for (let i = 0; i < boardarray.length; i++) {
+  //   for (let j = 0; j < boardarray[i].length; j++) {
+  //     if (boardarray[i][j] == 1) {
+  //       console.log("Player1 " + "populated" + " at " + i + "" + j);
+  //       console.log(score1);
+  //       score1++;
+  //     } else if (boardarray[i][j] == -1) {
+  //       console.log("Player2 " + "populated" + " at " + i + "" + j);
+  //     }
+  //   }
+  // }
+  //
+  // player1score = score1;
 }
 
 function render(e) {
@@ -129,7 +163,7 @@ function render(e) {
   }
 }
 
-// init();
+init();
 render();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

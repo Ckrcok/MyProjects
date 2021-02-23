@@ -65,8 +65,10 @@ td {
   justify-content: center;
   height: 140px;
   width: 140px;
-  text-align: center;
   border: 2px red solid;
+}
+#turn-of {
+  padding-right: 10px;
 }
 .buttons {
   display: flex;
