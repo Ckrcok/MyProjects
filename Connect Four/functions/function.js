@@ -4,18 +4,12 @@ score2 = 0;
 score1 = 0;
 timer = 60;
 
-/*----- constants -----*/
+playerTurn = 1;
 
-//  const player1 = document.createElement("img");
-// player1.classList.add("img");
-// player1.src = "/style/assets/Player1.png";
+/*----- constants -----*/
 
 const player1 = 1;
 const player2 = -1;
-
-playerTurn = 1;
-// const obj1 = document.createElement("img");
-// obj1.src = "assets/Player1.png";
 
 let boardarray = [
   [0, 0, 0, 0, 0, 0, 0],
@@ -27,11 +21,9 @@ let boardarray = [
 ];
 
 /*----- cached element references -----*/
-// const obj1 = new image("assets/Player1.png");
-// const playSound = new Audio("PlacementAudio.mp3");
 const backgroundMusic = document.getElementById("backgroundMusic");
 backgroundMusic.volume = 0.009;
-let obj1 = new Image("/assets/Player1.png");
+
 const board = document.getElementById("insideBoard");
 
 const buttonExit = document.getElementById("buttonExit");
@@ -41,9 +33,12 @@ const buttonMute = document.getElementById("buttonMute");
 let tr = document.querySelectorAll("tr");
 let td = document.querySelectorAll("td");
 
+let PlayerTurn = document.getElementById("player-turn");
+
 /*----- event listeners -----*/
 
 board.addEventListener("click", click);
+// board.addEventListener("click", changeColor);
 buttonExit.addEventListener("click", exit);
 buttonReset.addEventListener("click", reset);
 buttonMute.addEventListener("click", mute);
@@ -55,8 +50,9 @@ function click(e) {
     e.target.tagName === "TABLE" ||
     e.target.tagName === "TBODY" ||
     e.target.tagName === "TR"
-  )
+  ) {
     return;
+  }
 
   console.log("Player " + playerTurn + " Clicked the " + e.target.id);
   let x = e.target.id[0];
@@ -66,9 +62,10 @@ function click(e) {
     render(e);
     boardarray[x][y] = playerTurn;
     playerTurn = -1;
+    PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player2.png'>";
   } else if (playerTurn == -1) {
     render(e);
-
+    PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player1.png'>";
     boardarray[x][y] = playerTurn;
     playerTurn = 1;
   }
@@ -93,6 +90,49 @@ for (let i = 0; i < td.length; i++) {
   td[i].innerHTML = row + "" + col;
 }
 
+// Check if four element of the same player is next to eachother then a win condition will pop
+
+// check is there four
+function isFour(e) {
+  //loops in the arry to check if there is four
+  score1 = 0;
+  for (let i = 0; i < boardarray.length; i++) {
+    for (let j = 0; j < boardarray[i].length; j++) {
+      if (boardarray[i][j] == 1) {
+        console.log("Player1 " + "populated" + " at " + i + "" + j);
+        console.log(score1);
+        score1++;
+      } else if (boardarray[i][j] == -1) {
+        console.log("Player2 " + "populated" + " at " + i + "" + j);
+      }
+    }
+  }
+
+  player1score = score1;
+}
+
+function render(e) {
+  // setTimeout(render, 1000);
+  if (e.target.tagName === "table") return;
+  if (playerTurn == 1 && event.target.children.length === 0) {
+    console.log(
+      "Drawing what Player " + playerTurn + " draw at " + event.target.id
+    );
+    document.getElementById(event.target.id).innerHTML =
+      "<img class='img' src='/style/assets/Player1.png'>";
+  } else if (playerTurn == -1 && event.target.children.length === 0) {
+    console.log(
+      "Drawing what Player  " + playerTurn + " draw at " + event.target.id
+    );
+    document.getElementById(event.target.id).innerHTML =
+      "<img class='img' src='/style/assets/Player2.png'>";
+  }
+}
+
+// init();
+render();
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 // Aidan Way for the board
 // let board = [
 //   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -120,23 +160,3 @@ for (let i = 0; i < td.length; i++) {
 //   DOMboard.appendChild(row);
 // });
 // function init() {}
-
-function render(e) {
-  // setTimeout(render, 1000);
-  if (e.target.tagName === "table") return;
-  if (playerTurn == 1 && event.target.children.length === 0) {
-    console.log(
-      "Drawing what Player " + playerTurn + " draw at " + event.target.id
-    );
-    document.getElementById(event.target.id).innerHTML =
-      "<img class='img' src='/style/assets/Player1.png'>";
-  } else if (playerTurn == -1 && event.target.children.length === 0) {
-    console.log(
-      "Drawing what Player  " + playerTurn + " draw at " + event.target.id
-    );
-    document.getElementById(event.target.id).innerHTML =
-      "<img class='img' src='/style/assets/Player2.png'>";
-  }
-}
-// init();
-render();

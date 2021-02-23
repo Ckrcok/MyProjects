@@ -61,7 +61,7 @@ td {
 }
 .player-turn {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 140px;
   width: 140px;
@@ -75,50 +75,53 @@ td {
 
 #backgroundMusic {
   background-image: url("https://i.ytimg.com/vi/9DCnb_5TtOE/maxresdefault.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   opacity: 0.5;
-  width: 20vw;
-  height: 20vh;
+  width: 15vw;
+  height: 15vh;
   position: absolute;
 }
 
 @keyframes backgroundMusic {
   0% {
     background-image: url("https://i.ytimg.com/vi/9DCnb_5TtOE/maxresdefault.jpg");
-    background-size: cover;
+    background-size: 15vw 15vh;
     background-repeat: no-repeat;
-    width: 20vw;
-    height: 20vh;
+    opacity: 0.7;
+    width: 15vw;
+    height: 15vh;
   }
   25% {
     background-image: url("https://i.ytimg.com/vi/9DCnb_5TtOE/maxresdefault.jpg");
-    background-size: cover;
+    background-size: 25vw 25vh;
     background-repeat: no-repeat;
     background-color: yellow;
+    opacity: 0.8;
     width: 25vw;
-    height: 22vh;
+    height: 25vh;
   }
 
   100% {
     background-image: url("https://i.ytimg.com/vi/9DCnb_5TtOE/maxresdefault.jpg");
-    background-size: cover;
+    background-size: 40vw 40vh;
     background-repeat: no-repeat;
+    opacity: 0.9;
     background-color: red;
     width: 40vw;
-    height: 30vh;
+    height: 40vh;
   }
 }
 
 #backgroundMusic:hover {
   background-color: #047dc5;
-  background-size: cover;
+  background-size: 40vw 40vh;
   background-repeat: no-repeat;
   opacity: 1;
   width: 40vw;
-  height: 30vh;
+  height: 40vh;
   animation-name: backgroundMusic;
-  animation-duration: 4s;
+  animation-duration: 2s;
 }
 
 footer {
