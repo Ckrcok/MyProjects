@@ -4,8 +4,6 @@ score2 = 0;
 score1 = 0;
 timer = 60;
 
-winner = 0;
-
 playerTurn = 1;
 
 /*----- constants -----*/
@@ -28,7 +26,6 @@ backgroundMusic.volume = 0.009;
 
 const board = document.getElementById("insideBoard");
 
-const buttonExit = document.getElementById("buttonExit");
 const buttonReset = document.getElementById("buttonReset");
 const buttonMute = document.getElementById("buttonMute");
 
@@ -40,7 +37,6 @@ let PlayerTurn = document.getElementById("player-turn");
 /*----- event listeners -----*/
 
 board.addEventListener("click", click);
-buttonExit.addEventListener("click", exit);
 buttonReset.addEventListener("click", init);
 buttonMute.addEventListener("click", mute);
 
@@ -78,25 +74,29 @@ function click(e) {
 
   if (playerTurn == 1) {
     render(e);
-    isFour(boardarray);
     PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player2.png'>";
     boardarray[x][y] = playerTurn;
+    isWinner(isFour(boardarray));
     playerTurn = 2;
   } else if (playerTurn == 2) {
     render(e);
-    isFour(boardarray);
     PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player1.png'>";
     boardarray[x][y] = playerTurn;
+    isWinner(isFour(boardarray));
     playerTurn = 1;
   }
 }
 
 function exit(e) {
   console.log("Exit");
+  window.close();
+  window.open("", "_self");
+  window.close();
 }
 
 function mute(e) {
   console.log("Mute");
+  backgroundMusic.volume = 0;
 }
 
 for (let i = 0; i < td.length; i++) {
@@ -128,9 +128,16 @@ function isFour(boardarray) {
         return boardarray[r][c];
     }
   }
+
   // Check right
   for (r = 0; r < 6; r++) {
     for (c = 0; c < 4; c++) {
+      console.log(
+        boardarray[r][c],
+        boardarray[r][c + 1],
+        boardarray[r][c + 2],
+        boardarray[r][c + 3]
+      );
       if (
         chkLine(
           boardarray[r][c],
@@ -171,26 +178,19 @@ function isFour(boardarray) {
           return boardarray[r][c];
       }
     }
-    winner = playerTurn;
-    alert("Win " + winner);
+
     return 0;
   }
+}
 
-  // //loops in the arry to check if there is four
-  // score1 = 0;
-  // for (let i = 0; i < boardarray.length; i++) {
-  //   for (let j = 0; j < boardarray[i].length; j++) {
-  //     if (boardarray[i][j] == 1) {
-  //       console.log("Player1 " + "populated" + " at " + i + "" + j);
-  //       console.log(score1);
-  //       score1++;
-  //     } else if (boardarray[i][j] == -1) {
-  //       console.log("Player2 " + "populated" + " at " + i + "" + j);
-  //     }
-  //   }
-  // }
-  //
-  // player1score = score1;
+function isWinner(winner) {
+  if (winner == 1) {
+    alert("player 1 won");
+  } else if (winner == 2) {
+    alert("Player 2 won");
+  } else {
+    return;
+  }
 }
 
 function render(e) {
@@ -209,6 +209,8 @@ function render(e) {
     document.getElementById(event.target.id).innerHTML =
       "<img class='img' src='/style/assets/Player2.png'>";
   }
+  // winner = playerTurn;
+  // alert("Win " + winner);
 }
 
 init();

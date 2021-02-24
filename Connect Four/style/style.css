@@ -232,13 +232,7 @@ display: grid;
 
 /* 114 x 75 */
 /*
-.buttonExit {
-  cursor: pointer;
-  height: 50%;
-@@ -108,3 +113,13 @@ html {
-  cursor: pointer;
-  height: 50%;
-}
+
 
 .td {
   width: 75px;
