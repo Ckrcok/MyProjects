@@ -74,13 +74,13 @@ function click(e) {
 
   if (playerTurn == 1) {
     render(e);
-    PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player2.png'>";
+    PlayerTurn.innerHTML = "<img class='img' src='./style/assets/Player2.png'>";
     boardarray[x][y] = playerTurn;
     isWinner(isFour(boardarray));
     playerTurn = 2;
   } else if (playerTurn == 2) {
     render(e);
-    PlayerTurn.innerHTML = "<img class='img' src='/style/assets/Player1.png'>";
+    PlayerTurn.innerHTML = "<img class='img' src='./style/assets/Player1.png'>";
     boardarray[x][y] = playerTurn;
     isWinner(isFour(boardarray));
     playerTurn = 1;
@@ -131,7 +131,7 @@ function isFour(boardarray) {
 
   // Check right
   for (r = 0; r < 6; r++) {
-    for (c = 0; c < 4; c++) {
+    for (c = 0; c < 3; c++) {
       console.log(
         boardarray[r][c],
         boardarray[r][c + 1],
@@ -148,39 +148,38 @@ function isFour(boardarray) {
       )
         return boardarray[r][c];
     }
-
-    // Check down-right
-    for (r = 0; r < 3; r++) {
-      for (c = 0; c < 4; c++) {
-        if (
-          chkLine(
-            boardarray[r][c],
-            boardarray[r + 1][c + 1],
-            boardarray[r + 2][c + 2],
-            boardarray[r + 3][c + 3]
-          )
-        )
-          return boardarray[r][c];
-      }
-    }
-    // Check down-left
-
-    for (r = 3; r < 6; r++) {
-      for (c = 0; c < 4; c++) {
-        if (
-          chkLine(
-            boardarray[r][c],
-            boardarray[r - 1][c + 1],
-            boardarray[r - 2][c + 2],
-            boardarray[r - 3][c + 3]
-          )
-        )
-          return boardarray[r][c];
-      }
-    }
-
-    return 0;
   }
+  // Check down-right
+  for (r = 0; r < 3; r++) {
+    for (c = 0; c < 4; c++) {
+      if (
+        chkLine(
+          boardarray[r][c],
+          boardarray[r + 1][c + 1],
+          boardarray[r + 2][c + 2],
+          boardarray[r + 3][c + 3]
+        )
+      )
+        return boardarray[r][c];
+    }
+  }
+  // Check down-left
+
+  for (r = 3; r < 6; r++) {
+    for (c = 0; c < 4; c++) {
+      if (
+        chkLine(
+          boardarray[r][c],
+          boardarray[r - 1][c + 1],
+          boardarray[r - 2][c + 2],
+          boardarray[r - 3][c + 3]
+        )
+      )
+        return boardarray[r][c];
+    }
+  }
+
+  return 0;
 }
 
 function isWinner(winner) {
@@ -201,13 +200,13 @@ function render(e) {
       "Drawing what Player " + playerTurn + " draw at " + event.target.id
     );
     document.getElementById(event.target.id).innerHTML =
-      "<img class='img' src='/style/assets/Player1.png'>";
+      "<img class='img' src='./style/assets/Player1.png'>";
   } else if (playerTurn == 2 && event.target.children.length === 0) {
     console.log(
       "Drawing what Player  " + playerTurn + " draw at " + event.target.id
     );
     document.getElementById(event.target.id).innerHTML =
-      "<img class='img' src='/style/assets/Player2.png'>";
+      "<img class='img' src='./style/assets/Player2.png'>";
   }
   // winner = playerTurn;
   // alert("Win " + winner);
