@@ -34,8 +34,8 @@ Project Goals near future -
 
 - Basic HTML bones (Done)
 - Finish CSS look an feels (Done)
-- Basic JavaScript Functions (...Working...)
-- Finishing JavaScript (Waiting)
+- Basic JavaScript Functions (Done)
+- Finishing JavaScript (...Working...)
 - More Style (Waiting)
 
 ##
@@ -48,6 +48,6 @@ Project Goals Future -
 
 ##
 
-# WireFrame -
+# FrameWire -
 
 [![](https://raw.githubusercontent.com/Ckrcok/MyProjects/main/Connect%20Four/FrameWire.PNG)](#)

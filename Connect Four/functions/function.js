@@ -37,6 +37,7 @@ let PlayerTurn = document.getElementById("player-turn");
 /*----- event listeners -----*/
 
 board.addEventListener("click", click);
+board.addEventListener("click", pushDown);
 buttonReset.addEventListener("click", init);
 buttonMute.addEventListener("click", mute);
 
@@ -76,12 +77,15 @@ function click(e) {
     render(e);
     PlayerTurn.innerHTML = "<img class='img' src='./style/assets/Player2.png'>";
     boardarray[x][y] = playerTurn;
+
+    pushDown(boardarray);
     isWinner(isFour(boardarray));
     playerTurn = 2;
   } else if (playerTurn == 2) {
     render(e);
     PlayerTurn.innerHTML = "<img class='img' src='./style/assets/Player1.png'>";
     boardarray[x][y] = playerTurn;
+    pushDown(isEmpty(boardarray));
     isWinner(isFour(boardarray));
     playerTurn = 1;
   }
@@ -132,12 +136,6 @@ function isFour(boardarray) {
   // Check right
   for (r = 0; r < 6; r++) {
     for (c = 0; c < 3; c++) {
-      console.log(
-        boardarray[r][c],
-        boardarray[r][c + 1],
-        boardarray[r][c + 2],
-        boardarray[r][c + 3]
-      );
       if (
         chkLine(
           boardarray[r][c],
@@ -189,6 +187,92 @@ function isWinner(winner) {
     alert("Player 2 won");
   } else {
     return;
+  }
+}
+
+// function isEmpty(boardarray) {
+//   for (r = 6; r > 0; r--) {
+//     console.log(
+//       boardarray[r][c],
+//       boardarray[r][c - 1],
+//       boardarray[r][c - 2],
+//       boardarray[r][c - 3]
+//     );
+//
+//     if (
+//       chkLine(
+//         //boardarray[2][3]
+//         boardarray[r][c],
+//         boardarray[r - 1][c],
+//         boardarray[r - 2][c],
+//         boardarray[r - 3][c]
+//       )
+//     )
+//       return boardarray[r][c];
+//   }
+//
+//   // Check right
+//
+//   for (c = 3; c < 0; c--) {
+//     if (
+//       chkLine(
+//         boardarray[r][c],
+//         boardarray[r][c - 1],
+//         boardarray[r][c - 2],
+//         boardarray[r][c - 3]
+//       )
+//     )
+//       return boardarray[r][c];
+//   }
+//
+//   // Check down-right
+//
+//   for (c = 4; c < 0; c--) {
+//     if (
+//       chkLine(
+//         boardarray[r][c],
+//         boardarray[r - 1][c - 1],
+//         boardarray[r - 2][c - 2],
+//         boardarray[r - 3][c - 3]
+//       )
+//     )
+//       return boardarray[r][c];
+//   }
+//
+//   // Check down-left
+//
+//   for (c = 4; c < 0; c--) {
+//     if (
+//       chkLine(
+//         boardarray[r][c],
+//         boardarray[r + 1][c - 1],
+//         boardarray[r + 2][c - 2],
+//         boardarray[r + 3][c - 3]
+//       )
+//     )
+//       return boardarray[r][c];
+//   }
+//
+//   return 0;
+// }
+
+function pushDown(event) {
+  // let x = event.target.id[0];
+  let y = event.target.id;
+
+  console.log(y);
+  for (i = 0; i < boardarray.length; i++) {
+    if (boardarray[i][y] !== 0) {
+      if (i === 0) {
+        alert("Cant put there");
+        break;
+      } else {
+        boardarray[i - 1][y] = playerTurn;
+        break;
+      }
+    } else if (i === boardarray.length - 1) {
+      boardarray[i][y] = playerTurn;
+    }
   }
 }
 
