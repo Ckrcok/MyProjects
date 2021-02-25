@@ -4,25 +4,22 @@ let change;
 
 /*----- cached element references -----*/
 let Music = document.getElementById("music");
-let Nice = document.getElementById("nice");
 let Button = document.getElementById("button");
-let Dual = document.getElementById("dual");
+let Go = document.getElementById("go");
 /*----- event listeners -----*/
 
-Button.addEventListener("click", dual);
+Button.addEventListener("click", go);
 /*----- functions -----*/
 
-Music.volume = 0.07;
-Nice.volume = 0.17;
+Music.volume = 0.035;
 
-function dual(e) {
-  Dual.volume = 0.06;
-  Dual.play();
-  Music.pause();
-  Nice.pause();
+function go(e) {
+  Go.volume = 0.1;
+  Go.play();
+
   setTimeout(function (e) {
     chagePage();
-  }, 5000);
+  }, 2000);
 }
 
 function chagePage() {

@@ -183,12 +183,8 @@ function isFour(boardarray) {
 
 function isWinner(winner) {
   if (winner == 1) {
-    alert("player 1 won");
-
     window.location.href = "Player1Won.html";
   } else if (winner == 2) {
-    alert("Player 2 won");
-
     window.location.href = "Player2Won.html";
   } else {
     return;
