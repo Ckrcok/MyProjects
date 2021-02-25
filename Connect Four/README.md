@@ -1,10 +1,10 @@
 # 🌌Connect - Four In Space!󠀠🌌
 
 <p align="center">
-  <a href="https://i.kym-cdn.com/photos/images/newsfeed/001/061/696/e22.jpg">
+  <a href="https://i.imgur.com/UtzC0VG.png">
     <img
-      alt="connect-four meme"
-      src="https://i.kym-cdn.com/photos/images/newsfeed/001/061/696/e22.jpg"
+      alt="connect-four Inspace"
+      src="https://i.imgur.com/UtzC0VG.png"
       width="400"
     />
   </a>
@@ -35,8 +35,8 @@ Project Goals near future -
 - Basic HTML bones (Done)
 - Finish CSS look an feels (Done)
 - Basic JavaScript Functions (Done)
-- Finishing JavaScript (...Working...)
-- More Style (Waiting)
+- Finishing JavaScript (Done)
+- More Style (Done)
 
 ##
 
@@ -47,6 +47,14 @@ Project Goals Future -
 - Better JS
 
 ##
+
+# Gameplay Screenshots -
+
+Home Screen
+[![](https://i.imgur.com/kEyo9cI.png)](#)
+
+Game Screen
+[![](https://i.imgur.com/e4nGV1t.png)](#)
 
 # FrameWire -
 
