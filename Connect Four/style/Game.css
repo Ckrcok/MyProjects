@@ -73,7 +73,7 @@ td {
 }
 .buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 #backgroundMusic {
@@ -125,6 +125,13 @@ td {
   height: 60vh;
   animation-name: backgroundMusic;
   animation-duration: 2s;
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  /* background-image: url("https://i.ytimg.com/vi/9DCnb_5TtOE/maxresdefault.jpg"); */
 }
 
 footer {

@@ -39,6 +39,7 @@ let PlayerTurn = document.getElementById("player-turn");
 board.addEventListener("click", click);
 buttonReset.addEventListener("click", init);
 buttonMute.addEventListener("click", mute);
+buttonExit.addEventListener("click", exit);
 
 /*----- functions -----*/
 function init() {
@@ -60,11 +61,9 @@ function init() {
 }
 
 function click(e) {
-
-  let savedElement = e.composedPath().filter((target) =>{
-  console.log(typeof target);
-   return  target.tagName === "TD"
-
+  let savedElement = e.composedPath().filter((target) => {
+    console.log(typeof target);
+    return target.tagName === "TD";
   });
   console.log(savedElement);
 
@@ -98,10 +97,7 @@ function click(e) {
 }
 
 function exit(e) {
-  console.log("Exit");
-  window.close();
-  window.open("", "_self");
-  window.close();
+  window.location.href = "Index.html";
 }
 
 function mute(e) {
@@ -168,7 +164,6 @@ function isFour(boardarray) {
     }
   }
   // Check down-left
-
   for (r = 3; r < 6; r++) {
     for (c = 0; c < 4; c++) {
       if (
@@ -189,8 +184,12 @@ function isFour(boardarray) {
 function isWinner(winner) {
   if (winner == 1) {
     alert("player 1 won");
+
+    window.location.href = "Player1Won.html";
   } else if (winner == 2) {
     alert("Player 2 won");
+
+    window.location.href = "Player2Won.html";
   } else {
     return;
   }
@@ -205,7 +204,6 @@ function pushDown(savedElement) {
   for (i = 0; i < boardarray.length; i++) {
     if (boardarray[i][y] !== 0) {
       if (i === 0) {
-        alert("Cant put there");
         break;
       } else {
         boardarray[i - 1][y] = playerTurn;
@@ -223,20 +221,17 @@ function pushDown(savedElement) {
 function render(event) {
   // setTimeout(render, 1000);
   for (r = 0; r < 6; r++) {
-      for (c = 0; c < 7; c++) {
-        if (event.target.tagName === "table") return;
-        if (playerTurn == 1 && boardarray[r][c] == 1 ) {
-
-            document.getElementById(`${r}${c}`).innerHTML =
-              "<img class='img' src='./style/assets/Player1.png'>";
-        } else if (playerTurn == 2 && boardarray[r][c] == 2 ) {
-            document.getElementById(`${r}${c}`).innerHTML =
-              "<img class='img' src='./style/assets/Player2.png'>";
-        }
+    for (c = 0; c < 7; c++) {
+      if (event.target.tagName === "table") return;
+      if (playerTurn == 1 && boardarray[r][c] == 1) {
+        document.getElementById(`${r}${c}`).innerHTML =
+          "<img class='img' src='./style/assets/Player1.png'>";
+      } else if (playerTurn == 2 && boardarray[r][c] == 2) {
+        document.getElementById(`${r}${c}`).innerHTML =
+          "<img class='img' src='./style/assets/Player2.png'>";
       }
     }
-  // winner = playerTurn;
-  // alert("Win " + winner);
+  }
 }
 
 init();
