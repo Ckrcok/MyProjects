@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
+
 html {
   font-family: "Brush Script MT" cursive;
   height: 100%;
@@ -49,9 +51,10 @@ button {
 }
 
 footer {
+  margin-top: 5vh;
   text-align: center;
 
-  font-family: "Brush Script MT", cursive;
+  font-family: "Space Mono", monospace;
   color: #ff0000;
-  font-size: 35px;
+  font-size: 20px;
 }

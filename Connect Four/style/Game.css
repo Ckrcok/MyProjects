@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
+
 html {
   align-self: center;
   height: 100%;
@@ -83,7 +85,7 @@ td {
 #buttonExit,
 #buttonMute,
 #buttonReset {
-  font-family: "Brush Script MT", cursive;
+  font-family: "Space Mono", monospace;
   color: #ff0000;
   text-decoration: none;
   font-size: 2vw;
@@ -152,7 +154,7 @@ td {
 footer {
   text-align: center;
 
-  font-family: "Brush Script MT", cursive;
+  font-family: "Space Mono", monospace;
   color: #ff0000;
   font-size: 24px;
 }
